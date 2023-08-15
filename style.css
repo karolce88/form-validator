@@ -10,7 +10,7 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Montserrat', sans-serif;
-	background-color: rgb(233, 233, 233);
+	background-color: #b5e0ed;
 }
 
 .wrapper {
@@ -19,69 +19,99 @@ body {
 	box-shadow: 0 0 10px #000;
 }
 
-.top {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 200px;
-	color: #fff;
-	background-color: #00ba40;
-	text-transform: uppercase;
+form {
+	padding: 40px;
+	font-size: 20px;
 }
 
-.top p {
-	margin-top: 10px;
+h1 {
+	margin-bottom: 30px;
+	text-align: center;
 }
 
-.bottom {
-	padding: 40px 20px;
+.form-box {
+	margin-bottom: 15px;
 }
 
-label {
-	display: block;
-	margin-bottom: 10px;
-	font-size: 22px;
+.form-box label {
+	display: inline-block;
+	margin-bottom: 5px;
 }
 
-input, select {
-	margin-bottom: 25px;
-	padding: 8px 10px;
+.form-box input {
 	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid rgb(197,197,197);
 	border-radius: 5px;
-	border: 1px solid rgb(185, 185, 185);
 }
 
-.count{ 
+.form-box.error input {
+	border: 1px solid rgb(255, 2, 2);
+	background-color: rgba(209, 13, 13, .2);
+}
+
+.form-box .error-text {
+	margin: 5px 0 0 10px;
+	font-size: 14px;
+	color: rgb(255, 2, 2);
+	visibility: hidden;
+}
+
+.form-box.error .error-text {
+	visibility: visible;
+}
+
+.control-buttons {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.send, .clear, .close {
 	display: block;
-	margin: 20px auto;
-	padding: 20px 10px;
-	width: 60%;
-	font-size: 24px;
-	border-radius: 8px;
+	padding: 10px 0;
+	margin-left: 10px;
+	width: 100px;
+	font-size: 18px;
+	background-color: #1088c0;
 	color: #fff;
-	background-color: #00ba40;
 	border: none;
+	border-radius: 6px;
 	cursor: pointer;
 	transition: all .3s;
 }
 
-.count:hover {
-	background-color: rgb(0, 168, 59);
+.send:hover, .clear:hover, .close:hover { 
+	background-color: #085f88;
 }
 
-.cost-info {
-	display: none;
-	margin-top: 30px;
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	top: -300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 140px;
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: 2px solid black;
+	transition: top .5s;
+	
+}
+
+.popup p {
 	font-size: 20px;
 }
 
-.cost {
-	font-weight: bold;
+.popup .close {
+	margin-top: 20px;
 }
 
-.error {
-	font-size: 18px;
-	color: red;
-	text-align: center;
+.show-popup {
+	top: 75px;
 }
+

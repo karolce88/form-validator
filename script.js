@@ -1,33 +1,39 @@
-const price = document.querySelector('#price')
-const people = document.querySelector('#people')
-const tip = document.querySelector('#tip')
-const error = document.querySelector('.error')
-const countBtn = document.querySelector('.count')
-const costInfo = document.querySelector('.cost-info')
-const cost = document.querySelector('.cost')
+const username = document.querySelector('#username')
+const pass = document.querySelector('#password')
+const pass2 = document.querySelector('#password2')
+const email = document.querySelector('#email')
+const sendBtn = document.querySelector('.send')
+const clearBtn = document.querySelector('.clear')
+const popup = document.querySelector('.popup')
 
-const showBill = () => {
 
-    if (price.value == '' || tip.value == 0 || people.value == 0) {
-        error.textContent = 'Uzupełnij wszystkie pola!';
-        costInfo.style.display = 'none';
-    }
-    else {
-        error.textContent = '';
-        countBill();
+
+const checkForm = input => {
+    input.forEach(el => {
+        
+    })
+
+    
+
+    if (input.value === '') {
+        console.log('blad');
     }
 }
 
-const countBill = () => {
-    const newPrice = parseFloat(price.value);
-    const newPeople = parseFloat(people.value);
-    const newTip = parseFloat(tip.value);
+sendBtn.addEventListener('click', e => {
+    e.preventDefault()
 
-    const sum = ((newPrice * newTip) + newPrice) / newPeople;
-    costInfo.style.display = 'block';
+    checkForm([username, pass, pass2, email])
 
-    cost.textContent = sum.toFixed(2)
-    console.log(sum);
-}
+})
 
-countBtn.addEventListener('click', showBill)
+clearBtn.addEventListener('click', e => {
+    e.preventDefault()
+
+    [username, pass, pass2, email].forEach(el => {
+        el.value = ''
+    })
+})
+
+
+
